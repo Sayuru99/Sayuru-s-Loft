@@ -1,5 +1,6 @@
 from django.views import generic
 from .models import Post
+from django.views.generic import TemplateView
 
 
 class PostList(generic.ListView):
@@ -10,3 +11,8 @@ class PostDetail(generic.DetailView):
     model = Post
     template_name = 'post_detail.html'
 
+class AboutPageView(TemplateView):
+    template_name = "about.html"
+
+class ContactPageView(TemplateView):
+    template_name = "contact.html"
